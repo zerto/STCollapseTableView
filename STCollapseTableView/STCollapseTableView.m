@@ -289,7 +289,7 @@
     
 	while (nbSection > [self.sectionsStates count])
     {
-		[self.sectionsStates addObject:@NO];
+		[self.sectionsStates addObject:[NSNumber numberWithBool:self.openByDefault]];
 	}
     
 	return nbSection;

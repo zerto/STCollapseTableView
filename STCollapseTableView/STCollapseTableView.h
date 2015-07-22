@@ -57,6 +57,13 @@
 @property (nonatomic, assign) BOOL exclusiveSections;
 
 /**
+ *	This property allow to configure the default state of a section.
+ *  If YES, sections are opened
+ *  Default value is NO.
+ */
+@property (nonatomic, assign) BOOL openByDefault;
+
+/**
  * This property allow to customize UITableViewRowAnimation on collapsing
  * Default value is UITableViewRowAnimationTop
  */
