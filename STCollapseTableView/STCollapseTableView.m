@@ -287,10 +287,17 @@
 		[self.sectionsStates removeLastObject];
 	}
     
-	while (nbSection > [self.sectionsStates count])
+    for (int index = 0; index < nbSection; ++index)
     {
-		[self.sectionsStates addObject:[NSNumber numberWithBool:self.openByDefault]];
-	}
+        if ([self.collapseSectionDelegate respondsToSelector:@selector(shouldSectionBeOpenedByDefault:)])
+        {
+            [self.sectionsStates addObject:@([self.collapseSectionDelegate shouldSectionBeOpenedByDefault:index])];
+        }
+        else
+        {
+            [self.sectionsStates addObject:[NSNumber numberWithBool:self.openByDefault]];
+        }
+    }
     
 	return nbSection;
 }

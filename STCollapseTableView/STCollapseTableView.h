@@ -33,6 +33,7 @@
 @protocol STCollapseTableViewSectionDelegate <NSObject>
 @optional
 -(void)didToggleSection:(NSUInteger)sectionIndex collapsed:(BOOL)collapsed;
+-(BOOL)shouldSectionBeOpenedByDefault:(NSUInteger)sectionIndex;
 @end
 
 /**
